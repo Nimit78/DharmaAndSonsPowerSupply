@@ -38,6 +38,7 @@ export default function RootLayout({
         {/* ✅ Main Content (NO OVERLAP FIX) */}
         <main className="pt-[90px]">
           {children}
+          <Whatsapp/>
         </main>
 
       </body>

@@ -9,7 +9,6 @@ import PartnerSlider from "@/components/PartnerSlider";
 import LatestArticles from "@/components/LatestArtical";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
-import { Whatsapp } from "@/CommonUi/WhatsApp";
 
 export default function Home() {
   return (
@@ -24,7 +23,6 @@ export default function Home() {
    <LatestArticles/>
    <ContactSection/>
    <Footer/>
-   <Whatsapp/>
    </>
   );
 }
