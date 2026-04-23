@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header"; // 👈 ADD THIS
 import { Whatsapp } from "@/CommonUi/WhatsApp";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,14 +34,14 @@ export default function RootLayout({
 
         {/* ✅ Fixed Header */}
         <Header />
-        
+
 
         {/* ✅ Main Content (NO OVERLAP FIX) */}
         <main className="pt-[90px]">
           {children}
-          <Whatsapp/>
+          <Whatsapp />
         </main>
-
+        <Footer />
       </body>
     </html>
   );

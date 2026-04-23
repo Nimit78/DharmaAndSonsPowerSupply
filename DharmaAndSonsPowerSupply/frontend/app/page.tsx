@@ -8,7 +8,6 @@ import IndustriesSection from "@/components/Industries";
 import PartnerSlider from "@/components/PartnerSlider";
 import LatestArticles from "@/components/LatestArtical";
 import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -22,7 +21,6 @@ export default function Home() {
    <PartnerSlider/>
    <LatestArticles/>
    <ContactSection/>
-   <Footer/>
    </>
   );
 }
