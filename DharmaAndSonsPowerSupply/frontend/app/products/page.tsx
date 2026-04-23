@@ -8,7 +8,6 @@ import {
     ArrowRight,
     Box,
     Zap,
-    CheckCircle2
 } from "lucide-react";
 
 const partsList = [
@@ -39,7 +38,7 @@ const partsList = [
 ];
 
 type partsType = {
-    id: Number,
+    id: number,
     name: string,
     price: string,
     category: string,
@@ -47,79 +46,79 @@ type partsType = {
     stock: boolean
 }
 
-type propsType = {
-    part: partsType
-}
-
-const PartCard = ({ part }: propsType) => {
+const PartCard = ({ part }: { part: partsType }) => {
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="group relative bg-white dark:bg-slate-900 rounded-[2rem] border border-slate-100 dark:border-slate-800 p-4 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(37,99,235,0.1)]"
+            className="group relative bg-white dark:bg-slate-900 
+            rounded-3xl border border-slate-100 dark:border-slate-800 
+            p-3 sm:p-4 transition-all duration-500 hover:shadow-xl"
         >
-            {/* Icon/Image Area */}
-            <div className="relative h-48 w-full overflow-hidden rounded-[1.5rem] bg-slate-50 dark:bg-slate-800/50 flex items-center justify-center">
-                {/* Animated Background Element */}
+            {/* Image/Icon */}
+            <div className="relative h-36 sm:h-44 w-full overflow-hidden 
+            rounded-2xl bg-slate-50 dark:bg-slate-800/50 flex items-center justify-center">
+
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-600/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                 <Settings
-                    size={80}
                     className="text-slate-200 dark:text-slate-700 group-hover:text-blue-600 group-hover:rotate-90 transition-all duration-700"
+                    size={50}
                 />
 
-                <div className="absolute top-4 left-4">
-                    <span className="bg-blue-600 text-white px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-widest shadow-lg shadow-blue-200">
-                        {part.category}
-                    </span>
-                </div>
+                <span className="absolute top-2 left-2 text-[9px] sm:text-[10px] bg-blue-600 text-white px-2 py-1 rounded-full font-bold tracking-wider">
+                    {part.category}
+                </span>
 
                 {part.stock && (
-                    <div className="absolute top-4 right-4 bg-amber-400 p-1.5 rounded-full text-slate-900 shadow-md">
-                        <Zap size={14} fill="currentColor" />
+                    <div className="absolute top-2 right-2 bg-amber-400 p-1 rounded-full">
+                        <Zap size={12} />
                     </div>
                 )}
             </div>
 
             {/* Content */}
-            <div className="mt-6 px-2 pb-2">
-                <div className="flex justify-between items-start mb-2">
-                    <h3 className="text-xl font-black text-slate-900 dark:text-white group-hover:text-blue-600 transition-colors">
+            <div className="mt-4 px-1">
+                <div className="flex justify-between items-start gap-2">
+                    <h3 className="text-base sm:text-lg font-black text-slate-900 dark:text-white leading-tight">
                         {part.name}
                     </h3>
-                    <p className="text-blue-600 font-black text-lg italic">₹{part.price}</p>
+                    <p className="text-blue-600 font-bold text-sm sm:text-base">
+                        ₹{part.price}
+                    </p>
                 </div>
 
-                <p className="text-slate-500 dark:text-slate-400 text-sm mb-6 line-clamp-2 italic">
-                    "{part.desc}"
+                <p className="text-slate-500 text-xs sm:text-sm mt-2 line-clamp-2 italic">
+                    {part.desc}
                 </p>
 
-                {/* Features Info */}
-                <div className="flex items-center gap-4 mb-6 border-y border-slate-50 dark:border-slate-800 py-3">
-                    <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-600 dark:text-slate-400">
-                        <ShieldCheck size={14} className="text-blue-600" />
-                        <span>WARRANTY</span>
+                {/* Info */}
+                <div className="flex justify-between items-center text-[10px] mt-4 border-y py-2">
+                    <div className="flex items-center gap-1 text-slate-500">
+                        <ShieldCheck size={12} className="text-blue-600" />
+                        WARRANTY
                     </div>
-                    <div className="flex items-center gap-1.5 text-[10px] font-bold text-slate-600 dark:text-slate-400">
-                        <Box size={14} className="text-amber-500" />
-                        <span className={part.stock ? "text-green-600" : "text-red-500"}>
-                            {part.stock ? "READY STOCK" : "OUT OF STOCK"}
-                        </span>
+
+                    <div className={`flex items-center gap-1 font-bold ${
+                        part.stock ? "text-green-600" : "text-red-500"
+                    }`}>
+                        <Box size={12} />
+                        {part.stock ? "IN STOCK" : "OUT"}
                     </div>
                 </div>
 
-                {/* Action Button */}
+                {/* Button */}
                 <button
                     disabled={!part.stock}
-                    className={`w-full group/btn relative flex items-center justify-center gap-3 py-4 rounded-2xl font-black text-xs tracking-widest transition-all
-            ${part.stock
-                            ? "bg-slate-900 dark:bg-blue-600 text-white hover:bg-blue-700 dark:hover:bg-blue-500 shadow-xl shadow-blue-100 dark:shadow-none"
-                            : "bg-red-500 text-slate-200 cursor-not-allowed"}`}
+                    className={`w-full mt-4 flex items-center justify-center gap-2 
+                    py-3 rounded-xl text-[11px] font-bold tracking-wider transition-all
+                    ${part.stock
+                        ? "bg-slate-900 text-white hover:bg-blue-600"
+                        : "bg-red-500 text-white cursor-not-allowed"}`}
                 >
-                    <ShoppingCart size={18} className={part.stock ? "group-hover/btn:-translate-y-1 transition-transform" : ""} />
+                    <ShoppingCart size={16} />
                     {part.stock ? "ADD TO CART" : "UNAVAILABLE"}
-                    <ArrowRight size={14} className="absolute right-6 opacity-0 group-hover/btn:opacity-100 group-hover/btn:translate-x-2 transition-all" />
                 </button>
             </div>
         </motion.div>
@@ -128,28 +127,33 @@ const PartCard = ({ part }: propsType) => {
 
 const GeneratorPartsPage = () => {
     return (
-        <section className="relative py-20 bg-slate-50 dark:bg-[#020617]">
-            {/* Background Orbs (As per your theme) */}
-            <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] pointer-events-none" />
-            <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-amber-400/5 blur-[120px] pointer-events-none" />
+        <section className="relative py-12 sm:py-20 bg-slate-50 dark:bg-[#020617]">
 
-            <div className="container mx-auto px-6 relative z-10">
-                <div className="mb-16">
-                    <div className="flex items-center gap-2 mb-4">
-                        <span className="w-8 h-[2px] bg-amber-500"></span>
-                        <span className="text-blue-600 font-black uppercase tracking-[0.3em] text-[10px]">
-                            Genuine Spares
+            {/* Background */}
+            <div className="absolute top-0 right-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-blue-600/5 blur-[100px]" />
+            <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-amber-400/5 blur-[100px]" />
+
+            <div className="container mx-auto px-4 sm:px-6 relative z-10">
+
+                {/* Heading */}
+                <div className="mb-10 sm:mb-16">
+                    <div className="flex items-center gap-2 mb-3">
+                        <span className="w-6 h-[2px] bg-amber-500"></span>
+                        <span className="text-blue-600 font-bold tracking-widest text-[10px]">
+                            GENUINE SPARES
                         </span>
                     </div>
-                    <h2 className="text-4xl md:text-5xl font-black text-slate-900 dark:text-white uppercase italic">
-                        Maintenance <span className="text-blue-600">&</span> <br />
+
+                    <h2 className="text-2xl sm:text-4xl md:text-5xl font-black text-slate-900 dark:text-white leading-tight">
+                        Maintenance <span className="text-blue-600">&</span><br />
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-orange-500">
                             Spare Parts
                         </span>
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {/* Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-8">
                     {partsList.map((part) => (
                         <PartCard key={part.id} part={part} />
                     ))}
