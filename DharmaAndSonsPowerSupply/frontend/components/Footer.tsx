@@ -86,9 +86,9 @@ const Footer = () => {
                 <span>South Twenty Four Parganas, West Bengal, 700153</span>
               </div>
               <div className="space-y-1 flex flex-col">
-                <a href="tel:+919654400023" className="hover:text-[#d4af37] transition-colors">+91 9654400023</a>
-                <a href="tel:+918527500501" className="hover:text-[#d4af37] transition-colors">+91 8527500501</a>
-                <a href="tel:01204560160" className="hover:text-[#d4af37] transition-colors">0120-4560160</a>
+                <a href="tel:+917979848451" className="hover:text-[#d4af37] transition-colors">+91 7979848451</a>
+                {/* <a href="tel:+918527500501" className="hover:text-[#d4af37] transition-colors">+91 8527500501</a>
+                <a href="tel:01204560160" className="hover:text-[#d4af37] transition-colors">0120-4560160</a> */}
               </div>
               <div className="space-y-1 flex flex-col">
                 <a href="mailto:info@perfectgenerators.com" className="hover:text-[#d4af37] transition-colors break-all">info@perfectgenerators.com</a>
