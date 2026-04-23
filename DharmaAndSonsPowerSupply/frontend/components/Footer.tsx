@@ -81,9 +81,9 @@ const Footer = () => {
             <address className="not-italic text-white/80 space-y-4 text-sm">
               <div className="leading-relaxed">
                 <div className="font-medium text-white/90 mb-1">Head Office:</div>
-                <span>512, 5th Floor</span><br />
-                <span>Ansal Chamber-2, Bhikaji Cama Place</span><br />
-                <span>New Delhi-66</span>
+                <span>FLAT-4H, 2, PUSHPASREE APARTMENT,</span><br />
+                <span> NARKEL BAGAN ROAD, NARENDRAPUR</span><br />
+                <span>South Twenty Four Parganas, West Bengal, 700153</span>
               </div>
               <div className="space-y-1 flex flex-col">
                 <a href="tel:+919654400023" className="hover:text-[#d4af37] transition-colors">+91 9654400023</a>
